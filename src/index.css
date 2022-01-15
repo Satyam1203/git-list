@@ -16,6 +16,11 @@ code {
     monospace;
 }
 
+.center {
+  text-align: center;
+  margin-top: 16px;
+}
+
 .loader {
   display: flex;
   justify-content: center;

@@ -1,32 +1,42 @@
 .profile-details {
   display: flex;
   justify-content: flex-start;
-  padding: 12px;
+  padding: 16px;
+
+  @mixin links {
+    font-size: 14px;
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+      color: #333;
+    }
+  }
 
   .image {
     img {
       width: 160px;
+      height: 160px;
+      border-radius: 50%;
     }
 
     .github-url {
-      font-size: 14px;
       margin-top: 6px;
 
       a {
-        text-decoration: none;
-        color: #000;
-
-        &:hover {
-          color: #333;
-        }
+        @include links();
       }
     }
   }
 
   .about {
     text-align: left;
-    padding-top: 30px;
+    padding-top: 25px;
     padding-left: 30px;
+
+    h2 {
+      margin-top: 8px;
+    }
 
     .bio {
       margin: 12px 0 4px 0;
@@ -34,6 +44,31 @@
 
     .location {
       margin: 4px 0;
+    }
+
+    .twitter-url {
+      a {
+        @include links();
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      padding: 12px;
+      padding-top: 0;
+      text-align: center;
+
+      .twitter-url {
+        order: -1;
+        margin-top: 6px;
+      }
     }
   }
 }

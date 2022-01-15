@@ -6,23 +6,27 @@ import Loader from "./Loader";
 export default function ProfileDetails({ username = "satyam1203", count }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [repositories, setRepositories] = useState([]);
+  const [paginationBtnStart, setPaginationBtnStart] = useState(0);
   const [loading, setLoading] = useState(false);
-  const pages = Array.from({ length: Math.ceil(count / 6) }, (_, i) => i + 1);
+
+  let pages = Array.from({ length: Math.ceil(count / 6) }, (_, i) => i + 1);
 
   useEffect(() => {
     setLoading(true);
     (async function () {
       const response = await request(
-        `https://api.github.com/users/${username}/repos?per_page=6&page=${currentPage}&sort=created`
+        `https://api.github.com/users/${username}/repos?per_page=6&page=${currentPage}&sort=pushed`
       );
       setRepositories(response);
       setLoading(false);
     })();
+
+    return () => {
+      setRepositories([]);
+    };
   }, [username, currentPage]);
 
   useEffect(() => setCurrentPage(1), [username]);
-
-  console.log(repositories);
 
   return (
     <main className="repositories-wrapper">
@@ -40,21 +44,30 @@ export default function ProfileDetails({ username = "satyam1203", count }) {
           <button
             className="fas fa-angle-double-left"
             disabled={currentPage === 1}
-            onClick={() => setCurrentPage((prev) => prev - 1)}
+            onClick={() => {
+              if (paginationBtnStart && currentPage <= paginationBtnStart + 2)
+                setPaginationBtnStart(paginationBtnStart - 1);
+              setCurrentPage((prev) => prev - 1);
+            }}
           ></button>
-          {pages.map((page) => (
-            <button
-              className={currentPage === page ? "active" : undefined}
-              key={page}
-              onClick={() => setCurrentPage(page)}
-            >
-              {page}
-            </button>
-          ))}
+          {pages
+            .slice(paginationBtnStart, paginationBtnStart + 10)
+            .map((page) => (
+              <button
+                className={currentPage === page ? "active" : undefined}
+                key={page}
+                onClick={() => setCurrentPage(page)}
+              >
+                {page}
+              </button>
+            ))}
           <button
             className="fas fa-angle-double-right"
             disabled={currentPage === Math.ceil(count / 6)}
-            onClick={() => setCurrentPage((prev) => prev + 1)}
+            onClick={() => {
+              if (currentPage >= 9) setPaginationBtnStart(currentPage - 8);
+              setCurrentPage((prev) => prev + 1);
+            }}
           ></button>
         </div>
       )}

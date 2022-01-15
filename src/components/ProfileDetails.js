@@ -12,13 +12,23 @@ export default function ProfileDetails({ userDetails }) {
 
       <div className="about">
         <h2>{userDetails.name}</h2>
-        <p className="bio">{userDetails.bio}</p>
-        <p className="location">
-          <i className="fas fa-map-marker-alt" />
-          &nbsp;
-          {userDetails.location}
-        </p>
-        <p className="twitter-url">{userDetails.twitter_username}</p>
+        {userDetails.bio && <p className="bio">{userDetails.bio}</p>}
+        {userDetails.location && (
+          <p className="location">
+            <i className="fas fa-map-marker-alt" />
+            &nbsp;
+            {userDetails.location}
+          </p>
+        )}
+        {userDetails.twitter_username && (
+          <p className="twitter-url">
+            <i className="fab fa-twitter"></i>&nbsp;
+            <a href={`https://twitter.com/${userDetails.twitter_username}`}>
+              https://twitter.com/
+              {userDetails.twitter_username}
+            </a>
+          </p>
+        )}
       </div>
     </div>
   );

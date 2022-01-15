@@ -1,11 +1,15 @@
 import axios from "axios";
 
 async function request(url, data, method = "GET") {
-  const res = await axios(url, {
-    data,
-    method,
-  });
-  return res.data;
+  try {
+    const res = await axios(url, {
+      data,
+      method,
+    });
+    return res.data;
+  } catch (e) {
+    return 404;
+  }
 }
 
 export { request };

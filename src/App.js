@@ -10,13 +10,19 @@ import Loader from "./components/Loader";
 function App() {
   const [username, setUsername] = useState("johnpapa");
   const [userDetails, setUserDetails] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     (async function () {
-      const details = await request(`https://api.github.com/users/${username}`);
-      setUserDetails(details);
+      const res = await request(`https://api.github.com/users/${username}`);
+      if (res === 404) {
+        setUserDetails("");
+        setError("Invalid Username. Please try again.");
+      } else {
+        setUserDetails(res);
+      }
       setLoading(false);
     })();
   }, [username]);
@@ -24,7 +30,9 @@ function App() {
   return (
     <div className="App">
       <Header setUsername={setUsername} />
-      {loading ? (
+      {error ? (
+        <div className="center">{error}</div>
+      ) : loading ? (
         <Loader />
       ) : (
         <>

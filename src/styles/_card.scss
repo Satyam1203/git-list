@@ -1,8 +1,10 @@
 .repo-details {
   display: flex;
   flex-direction: column;
-  width: clamp(45%, 450px, 90%);
+  width: 80%;
+  max-width: 450px;
 
+  width: 450px;
   border-radius: 6px;
   border: 1px solid #d0d7de;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
