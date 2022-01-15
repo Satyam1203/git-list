@@ -5,7 +5,7 @@ export default function Card({ repo }) {
   return (
     <div className="repo-details">
       <div className="repo-title">
-        <i class="fas fa-book" />
+        <i className="fas fa-book" />
         <a href={html_url} target="_blank">
           {name}
         </a>
@@ -14,7 +14,7 @@ export default function Card({ repo }) {
       <div className="repo-other-info">
         {language && <span>{language}</span>}
         <span>
-          <i class="far fa-star" /> {startgazers_count || 0}
+          <i className="far fa-star" /> {startgazers_count || 0}
         </span>
       </div>
     </div>

@@ -7,6 +7,20 @@
     img {
       width: 160px;
     }
+
+    .github-url {
+      font-size: 14px;
+      margin-top: 6px;
+
+      a {
+        text-decoration: none;
+        color: #000;
+
+        &:hover {
+          color: #333;
+        }
+      }
+    }
   }
 
   .about {

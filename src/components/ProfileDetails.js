@@ -18,7 +18,7 @@ export default function ProfileDetails({ username = "satyam1203" }) {
         <p className="github-url">
           <i className="fab fa-github" />
           &nbsp;
-          {userDetails.html_url}
+          <a href={userDetails.html_url}>{userDetails.html_url}</a>
         </p>
       </div>
 
@@ -26,7 +26,7 @@ export default function ProfileDetails({ username = "satyam1203" }) {
         <h2>{userDetails.name}</h2>
         <p className="bio">{userDetails.bio}</p>
         <p className="location">
-          <i class="fas fa-map-marker-alt" />
+          <i className="fas fa-map-marker-alt" />
           &nbsp;
           {userDetails.location}
         </p>

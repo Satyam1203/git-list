@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  .search-bar {
+    input {
+      padding: 4px;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 4px;
+      background-color: #4698f8;
+      color: #fff;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      margin-left: 4px;
+    }
+  }
+}

@@ -21,13 +21,15 @@ export default function ProfileDetails({ username = "satyam1203" }) {
     <main className="repositories-wrapper">
       <section className="repositories">
         {repositories?.map((repo) => (
-          <Card repo={repo} />
+          <Card key={repo.id} repo={repo} />
         ))}
       </section>
       <div>
         {Array.from({ length: Math.ceil(39 / 6) }, (_, i) => i + 1).map(
           (page) => (
-            <button onClick={() => setCurrentPage(page)}>{page}</button>
+            <button key={page} onClick={() => setCurrentPage(page)}>
+              {page}
+            </button>
           )
         )}
       </div>

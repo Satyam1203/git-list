@@ -1,3 +1,32 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+}
+
+.header .search-bar input {
+  padding: 4px;
+}
+
+.header .search-bar button {
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  background-color: #4698f8;
+  color: #fff;
+  border: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin-left: 4px;
+}
+
 .profile-details {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,6 +39,20 @@
 
 .profile-details .image img {
   width: 160px;
+}
+
+.profile-details .image .github-url {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.profile-details .image .github-url a {
+  text-decoration: none;
+  color: #000;
+}
+
+.profile-details .image .github-url a:hover {
+  color: #333;
 }
 
 .profile-details .about {
@@ -37,6 +80,8 @@
   width: clamp(45%, 450px, 90%);
   border-radius: 6px;
   border: 1px solid #d0d7de;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 16px;
   margin: 12px;
 }
