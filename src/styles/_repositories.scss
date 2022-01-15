@@ -3,5 +3,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 420px;
+  }
+
+  .pagination-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+
+    button {
+      width: 32px;
+      height: 32px;
+      font-weight: bold;
+      background-color: #fff;
+      border: 1px solid #4698f8;
+      color: #4698f8;
+
+      &.active {
+        background-color: #4698f8;
+        color: #fff;
+      }
+    }
   }
 }

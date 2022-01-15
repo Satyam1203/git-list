@@ -1,16 +1,4 @@
-import { useState, useEffect } from "react";
-import { request } from "../helpers/request";
-
-export default function ProfileDetails({ username = "satyam1203" }) {
-  const [userDetails, setUserDetails] = useState({});
-
-  useEffect(() => {
-    (async function () {
-      const details = await request(`https://api.github.com/users/${username}`);
-      setUserDetails(details);
-    })();
-  }, [username]);
-
+export default function ProfileDetails({ userDetails }) {
   return (
     <div className="profile-details">
       <div className="image">

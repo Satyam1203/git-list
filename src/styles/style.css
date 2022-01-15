@@ -84,6 +84,7 @@
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 16px;
   margin: 12px;
+  max-height: 160px;
 }
 
 .repo-details .repo-title {
@@ -112,6 +113,10 @@
   margin-top: 8px;
   font-size: 13px;
   line-height: 1.25;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .repo-details .repo-other-info {
@@ -136,4 +141,29 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-height: 420px;
+}
+
+.repositories-wrapper .pagination-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 16px;
+}
+
+.repositories-wrapper .pagination-buttons button {
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  background-color: #fff;
+  border: 1px solid #4698f8;
+  color: #4698f8;
+}
+
+.repositories-wrapper .pagination-buttons button.active {
+  background-color: #4698f8;
+  color: #fff;
 }

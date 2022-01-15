@@ -8,6 +8,7 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 16px;
   margin: 12px;
+  max-height: 160px;
 
   .repo-title {
     display: flex;
@@ -28,6 +29,11 @@
     margin-top: 8px;
     font-size: 13px;
     line-height: 1.25;
+
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
 
   .repo-other-info {
