@@ -6,6 +6,8 @@ Link: https://git-list-omega.vercel.app/
 
 - Clone the repository `git clone https://github.com/Satyam1203/git-list.git`
 
+- Navigate to the cloned repository locally `cd git-list/`
+
 - Install the dependencies `npm i`
 
 - Start the application `npm run start`
