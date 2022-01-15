@@ -3,7 +3,7 @@ import { request } from "../helpers/request";
 import Card from "./Card";
 import Loader from "./Loader";
 
-export default function ProfileDetails({ username = "satyam1203", count }) {
+export default function ProfileDetails({ username, count }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [repositories, setRepositories] = useState([]);
   const [paginationBtnStart, setPaginationBtnStart] = useState(0);
