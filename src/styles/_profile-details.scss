@@ -1,0 +1,25 @@
+.profile-details {
+  display: flex;
+  justify-content: flex-start;
+  padding: 12px;
+
+  .image {
+    img {
+      width: 160px;
+    }
+  }
+
+  .about {
+    text-align: left;
+    padding-top: 30px;
+    padding-left: 30px;
+
+    .bio {
+      margin: 12px 0 4px 0;
+    }
+
+    .location {
+      margin: 4px 0;
+    }
+  }
+}

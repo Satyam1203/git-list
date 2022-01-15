@@ -15,13 +15,21 @@ export default function ProfileDetails({ username = "satyam1203" }) {
     <div className="profile-details">
       <div className="image">
         <img src={userDetails.avatar_url} alt="github-avatar" />
-        <p className="github-url">{userDetails.html_url}</p>
+        <p className="github-url">
+          <i className="fab fa-github" />
+          &nbsp;
+          {userDetails.html_url}
+        </p>
       </div>
 
       <div className="about">
         <h2>{userDetails.name}</h2>
         <p className="bio">{userDetails.bio}</p>
-        <p className="location">{userDetails.location}</p>
+        <p className="location">
+          <i class="fas fa-map-marker-alt" />
+          &nbsp;
+          {userDetails.location}
+        </p>
         <p className="twitter-url">{userDetails.twitter_username}</p>
       </div>
     </div>
